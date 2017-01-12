@@ -6,13 +6,13 @@ Before use this project, set the username and password of database in the __appl
 
 This project uses Maven to manage the dependences, build the source code and package the application. For all that, open a terminal in the project folder and execute the following command:
 
-``` bash
+```shell
 mvn clean package
 ```
 
 The tomcat is used as application server. To run the server, open a terminal in the project folder and execute the following command in target/bin/ folder:
 
-```bash
+```shell
 sh webapp
 ```
 
