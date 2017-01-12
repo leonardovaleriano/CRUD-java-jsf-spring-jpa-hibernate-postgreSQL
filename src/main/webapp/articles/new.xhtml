@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<ui:composition template="/application.xhtml">
+    <ui:define name="title">CRUD Example | Article</ui:define>
+
+    <div class="large-12 columns">
+        <ui:define name="content">
+            <div class="small-8">
+                <h3>New Article</h3>
+                <h:messages errorClass="alert-box alert radius"/>
+                <h:form prependId="false">
+                    <div class="row">
+                        <div class="small-3 columns">
+                            <label for="title" class="right inline">Title</label>
+                        </div>
+                        <div class="small-9 columns">
+                            <h:inputText id="title" value="#{articleBean.item.title}"/>
+                            <p>
+                                <h:commandButton value="Create" type="submit"
+                                                 action="#{articleBean.create(articleBean.item)}"
+                                                 styleClass="button radius"/>
+                            </p>
+                        </div>
+                    </div>
+                </h:form>
+            </div>
+        </ui:define>
+    </div>
+</ui:composition>
+
+</html>

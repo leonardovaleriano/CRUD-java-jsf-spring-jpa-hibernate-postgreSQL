@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet library="css" name="normalize.css"/>
+        <h:outputStylesheet library="css" name="foundation.min.css"/>
+        <h:outputStylesheet library="css" name="application.css"/>
+
+        <h:outputScript library="js/vendor" name="modernizr.js"></h:outputScript>
+        <title><ui:insert name="title">JSF Blog</ui:insert></title>
+    </h:head>
+
+    <h:body>        
+        <div class="row">
+            <ui:insert name="content">Content</ui:insert>
+        </div>
+
+        <h:outputScript library="js/vendor" name="jquery.js"></h:outputScript>
+        <h:outputScript library="js" name="foundation.min.js"></h:outputScript>
+        <h:outputScript>
+            $(document).foundation();
+        </h:outputScript>
+
+    </h:body>
+
+</html>

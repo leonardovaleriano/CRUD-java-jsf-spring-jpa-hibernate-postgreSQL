@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+    <body>
+        <ui:composition template="./application.xhtml">
+            <ui:define name="title">CRUD Example</ui:define>
+            <div class="large-12 columns">
+                <div class="panel">
+                    <ui:define name="content">                      
+                        <h3>Article</h3>
+                        
+                        <h:form>
+							<div class="row">
+            					<div class="small-2 columns">
+                    				<label for="title" >Title</label>
+                				</div>
+                				<div class="small-9 columns">
+				                    <h:inputText id="title" value="#{articleBean.item.title}"/>
+				                </div>
+				            </div>
+				            <div class="row">
+				            	<div class="small-2 columns">
+ 				                   	<label for="text" class="left inline">Text</label>
+			                   	</div>
+		                   		<div class="small-9 columns">
+				                	<h:inputTextarea id="text" value="#{articleBean.item.text}"/>
+				                    <p>
+				                        <h:commandButton value="Save" type="submit"
+				                         action="#{articleBean.save()}"
+				                         styleClass="button radius"/>
+				                    </p>
+			                    </div>
+				            </div>
+						</h:form> 
+						
+						<h3>Articles List</h3>
+						
+						<table>
+		                <thead>
+		                <tr>
+		                    <th>
+		                    	<td> Article </td>
+		                    	<td> Title </td>
+		                    </th>
+		                    <th/>
+		                    <th/>
+		                </tr>
+		                </thead>
+		                <tbody>
+		                <ui:repeat value="#{articleBean.items}" var="item">
+		                    <h:form>
+		                        <tr>
+		                        	<td>#{item.id}</td>
+		                            <td>#{item.title}</td>
+		                            <td>
+		                                <h:commandLink value="Edit" action="#{articleBean.setItem(item)}" styleClass="button radius small"/>
+		                            </td>
+		                            <td>
+		                                <h:commandLink value="Delete" action="#{articleBean.destroy(item)}" styleClass="button radius small alert"/>
+		                            </td>
+		                        </tr>
+		                    </h:form>
+		                </ui:repeat>
+		                </tbody>
+		            </table>
+                    </ui:define>
+                </div>
+            </div>
+        </ui:composition>
+    </body>
+</html>
