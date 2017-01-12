@@ -10,10 +10,6 @@ This project uses Maven to manage the dependences, build the source code and pac
 mvn clean package
 ```
 
-The tomcat is used as application server. To run the server, open a terminal in the project folder and execute the following command in target/bin/ folder:
-
-```shell
-sh webapp
-```
+The tomcat is used as application server. To run the server, open a terminal in the project folder and execute: sh target/bin/webapp.
 
 Thanks!
